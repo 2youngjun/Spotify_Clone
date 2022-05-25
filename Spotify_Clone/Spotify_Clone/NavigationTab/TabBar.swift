@@ -70,9 +70,6 @@ struct TabBar: View {
         }
         
     }
-//    func makeSandwitch(){
-//
-//    }
 }
 
 struct TabBar_Previews: PreviewProvider {

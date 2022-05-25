@@ -30,7 +30,7 @@ struct HomeView: View {
                 
                 RecentlyPlayedView()
                 
-                
+                TopPodcastsView()
                 
             }
         }
