@@ -10,15 +10,15 @@ import SwiftUI
 struct NowPlayingView : View {
     var body: some View {
         HStack(spacing: 16){
-            Image("LovingYouGirl")
+            Image("placeholder-img")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
             VStack(alignment: .leading){
-                Text("Loving you girl")
+                Text("Power")
                     .font(.footnote)
                     .fontWeight(.semibold)
-                Text("Peder Elias")
+                Text("Kanye West")
                     .font(.footnote)
                     .foregroundColor(.secondary)
             }
