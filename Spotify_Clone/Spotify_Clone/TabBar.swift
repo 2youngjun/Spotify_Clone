@@ -13,7 +13,6 @@ struct TabBar: View {
             UITabBar.appearance().barTintColor = #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1)
             UITabBar.appearance().tintColor = #colorLiteral(red: 0.9960784314, green: 0.9960784314, blue: 1, alpha: 1)
         }
-    
     var body: some View {
         TabView{
             NavigationView{
@@ -82,46 +81,16 @@ struct TabBar_Previews: PreviewProvider {
     }
 }
 
-struct NowPlayingView : View {
-    var body: some View {
-        HStack(spacing: 16){
-            Image("LovingYouGirl")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            
-            VStack(alignment: .leading){
-                Text("Loving you girl")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                Text("Peder Elias")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-            }
-            
-            Spacer()
-            
-            HStack(spacing: 32){
-                Button(action: {
-                    print("Bluetooth Pressed!")
-                }){
-                    Image("bluetooth")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
-                }
-                
-                Button(action: {
-                    print("Pause Pressed!")
-                }){
-                    Image("pauseUnrounded")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.white)
-                }
-                .padding(.trailing, 16)
-            }
+struct NavigationConfigurator: UIViewControllerRepresentable {
+    var configure: (UINavigationController) -> Void = { _ in }
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+        UIViewController()
+    }
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+        if let nc = uiViewController.navigationController {
+            self.configure(nc)
         }
-        .frame(height: 68)
-        .background(Color.init(#colorLiteral(red: 0.137254902, green: 0.137254902, blue: 0.137254902, alpha: 1)))
     }
 }
+
