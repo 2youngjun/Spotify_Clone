@@ -7,16 +7,37 @@
 
 import SwiftUI
 
+enum RepeatMethod: Int{
+    case playingDirect
+    case playingRoutine
+    case playingOne
+}
+
 struct MusicPlayerView: View {
-    @State private var heart: Bool = false
+    @State private var isHeart = false
+    @State private var isShuffle = false
+    @State private var isPlaying = false
+    @State private var isRepeatMethod : RepeatMethod = .playingDirect
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack{
             Spacer()
             VStack{
                 HStack{
+                    Button(action: {
+                        withAnimation{
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }){
+                        Image(systemName: "chevron.compact.down")
+                            .resizable()
+                            .frame(width: 16, height: 8)
+                            .foregroundColor(.white)
+                    }
                     Spacer()
-                    Text("Kanye West Greatest Hits")
-                        .font(.subheadline)
+                    Text("Peder Elias 라디오")
+                        .font(.footnote)
                         .fontWeight(.semibold)
                     Spacer()
                     Button(action: {
@@ -26,39 +47,38 @@ struct MusicPlayerView: View {
                     }
                 }
                 
-                Image("placeholder-img")
+                Image("LovingYouGirl")
                     .resizable()
-                    .aspectRatio(1, contentMode: .fit)
-                    .frame(width: 250, height: 250)
+                    .aspectRatio(1, contentMode: .fill)
                     .padding(.top, 32)
                     .padding(.bottom, 32)
                 
                 HStack{
                     VStack(alignment: .leading, spacing: 8){
-                        Text("Dark Fantasy")
-                            .font(.title)
+                        Text("Loving You Girl(feat.Hkeem)")
+                            .font(.title2)
                             .fontWeight(.bold)
-                        Text("Kanye West")
-                            .font(.title3)
-                            // opacity
+                        Text("Peder Elias, Hkeem")
+                            .font(.body)
                             .foregroundColor(Color.white.opacity(0.6))
                     }
                     
                     Spacer()
                     
                     Button(action: {
-                        heart.toggle()
+                        isHeart.toggle()
                     }){
-                        if heart {
-                            Image(systemName: "heart-fill")
+                        if isHeart {
+                            Image(systemName: "heart.fill")
                                 .resizable()
                                 .frame(width: 25, height: 25)
-                                .background(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+                                .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+                                
                         } else {
                             Image(systemName: "heart")
                                 .resizable()
                                 .frame(width: 25, height: 25)
-                                .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+                                .foregroundColor(.white)
                         }
                     }
                 }
@@ -88,46 +108,88 @@ struct MusicPlayerView: View {
                 }
                 
                 HStack {
-                    Button(action:{}) {
-                        Image("shuffle")
-                            .resizable()
-                            .frame(width:20,height:20)
-                            .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+                    Button(action:{
+                        isShuffle.toggle()
+                    }) {
+                        if isShuffle {
+                            Image(systemName: "shuffle")
+                                .resizable()
+                                .frame(width:20,height:20)
+                                .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+                        } else {
+                            Image(systemName: "shuffle")
+                                .resizable()
+                                .frame(width:20,height:20)
+                        }
                     }
+                    
                     Spacer()
+                    
                     Button(action:{}) {
-                        Image("left-arrow")
+                        Image(systemName: "backward.end")
                             .resizable()
                             .frame(width:30,height:30)
                     }
+                    
                     Spacer()
-                    Button(action:{}) {
-                        Image("pause")
-                            .resizable()
-                            .frame(width:70,height:70)
+                    
+                    Button(action:{
+                        isPlaying.toggle()
+                    }) {
+                        if isPlaying {
+                            Image(systemName: "play.circle")
+                                .resizable()
+                                .frame(width:70,height:70)
+                        } else {
+                            Image(systemName: "pause.circle")
+                                .resizable()
+                                .frame(width:70,height:70)
+                        }
                     }
+                    
                     Spacer()
+                    
                     Button(action:{}) {
-                        Image("right-arrow")
+                        Image(systemName: "forward.end")
                             .resizable()
                             .frame(width:30,height:30)
                     }
+                    
                     Spacer()
-                    Button(action:{}) {
-                        Image("desktop")
-                            .resizable()
-                            .frame(width:20,height:20)
+                    
+                    Button(action:{
+                        switch self.isRepeatMethod {
+                        case .playingDirect:
+                            self.isRepeatMethod = .playingRoutine
+                        case .playingRoutine:
+                            self.isRepeatMethod = .playingOne
+                        default :
+                            self.isRepeatMethod = .playingDirect
+                        }
+                    }) {
+                        self.rotateView()
+                        
                     }
                 }.padding(.top, 32)
                 
             }.padding(24)
             Spacer(minLength: 100)
         }
-        .background(LinearGradient(gradient: Gradient(colors: [Color.init(#colorLiteral(red: 0.6745098039, green: 0.09411764706, blue: 0.1647058824, alpha: 1)) , Color.init(#colorLiteral(red: 0.3725490196, green: 0.05490196078, blue: 0.09019607843, alpha: 1)) ]), startPoint: .topLeading, endPoint: .center))
+        .background(LinearGradient(gradient: Gradient(colors: [Color.init(red: 147/225, green: 178/225, blue: 196/255) , Color.init(red: 107/225, green: 129/225, blue: 143/225) ]), startPoint: .topLeading, endPoint: .center))
         .foregroundColor(.white)
         .ignoresSafeArea()
-        
-        
+    }
+    
+    @ViewBuilder
+    func rotateView() -> some View {
+        switch self.isRepeatMethod {
+        case .playingDirect:
+            Image(systemName: "repeat").resizable().frame(width: 20, height: 20)
+        case .playingOne :
+            Image(systemName: "repeat.1").resizable().frame(width: 20, height: 20).foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+        default :
+            Image(systemName: "repeat").resizable().frame(width: 20, height: 20).foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+        }
     }
 }
 

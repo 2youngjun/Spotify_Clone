@@ -53,19 +53,8 @@ struct TabBar: View {
         .accentColor(.black)
         
         if isPlayer {
-            ZStack(alignment: .topLeading){
+            ZStack{
                 MusicPlayerView()
-                Button(action: {
-                    withAnimation{
-                        isPlayer.toggle()
-                    }
-                }){
-                    Image("down-arrow")
-                        .resizable()
-                        .accentColor(.black)
-                        .frame(width: 20, height: 20)
-                }
-                .padding(24)
             }
             .transition(.move(edge: .bottom))
         }
@@ -90,4 +79,3 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
         }
     }
 }
-

@@ -8,19 +8,34 @@
 import SwiftUI
 
 struct NowPlayingView : View {
+    @State private var isPlay = false
+    
     var body: some View {
         HStack(spacing: 16){
-            Image("placeholder-img")
+            Image("LovingYouGirl")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
             VStack(alignment: .leading){
-                Text("Power")
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                Text("Kanye West")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
+                HStack{
+                    Text("Loving you girl • ")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                    Text("Peder Elias, Hkeem")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.white.opacity(0.7))
+                }
+                HStack{
+                    Image(systemName: "headphones")
+                        .resizable()
+                        .frame(width: 8, height: 8)
+                        .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+                    Text("이영준의 AIRPODS PRO")
+                        .font(.caption2)
+                        .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+                }
+                
             }
             
             Spacer()
@@ -29,19 +44,29 @@ struct NowPlayingView : View {
                 Button(action: {
                     print("Bluetooth Pressed!")
                 }){
-                    Image("bluetooth")
+                    Image(systemName: "headphones")
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
                 }
                 
                 Button(action: {
-                    print("Pause Pressed!")
+                    isPlay.toggle()
                 }){
-                    Image("pauseUnrounded")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .foregroundColor(.white)
+                    if isPlay{
+                        Image(systemName: "play.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.white)
+                        
+                    } else {
+                        Image(systemName: "pause.fill")
+                            .resizable()
+                            .frame(width: 16, height: 20)
+                            .foregroundColor(.white)
+                            .padding(.leading, 2)
+                            .padding(.trailing, 2)
+                    }
                 }
                 .padding(.trailing, 16)
             }

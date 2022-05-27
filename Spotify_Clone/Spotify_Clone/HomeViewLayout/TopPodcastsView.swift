@@ -12,7 +12,7 @@ struct TopPodcastsView: View {
         VStack{
             SectionTitle(title: "Your top podcasts")
             ScrollView(.horizontal, showsIndicators: false){
-                HStack{
+                HStack(spacing: 16){
                     ForEach(GenericContent.podcastsData){ cast in
                         VStack(alignment: .leading){
                             Image(cast.imageName)
