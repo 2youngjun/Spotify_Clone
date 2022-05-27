@@ -22,6 +22,7 @@
 		8B46B959283E6F960094DA17 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B958283E6F960094DA17 /* SectionTitle.swift */; };
 		8B46B95C283E73C00094DA17 /* RecentlyPlayedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B95B283E73C00094DA17 /* RecentlyPlayedView.swift */; };
 		8B46B95E283E7A940094DA17 /* TopPodcastsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B95D283E7A940094DA17 /* TopPodcastsView.swift */; };
+		8B46B962283EEE980094DA17 /* MusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B961283EEE980094DA17 /* MusicPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		8B46B958283E6F960094DA17 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		8B46B95B283E73C00094DA17 /* RecentlyPlayedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedView.swift; sourceTree = "<group>"; };
 		8B46B95D283E7A940094DA17 /* TopPodcastsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPodcastsView.swift; sourceTree = "<group>"; };
+		8B46B961283EEE980094DA17 /* MusicPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				8B46B94D283B39CF0094DA17 /* TabBar.swift */,
 				8B46B94F283C91940094DA17 /* NowPlayingView.swift */,
+				8B46B961283EEE980094DA17 /* MusicPlayerView.swift */,
 			);
 			path = NavigationTab;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				8B46B95C283E73C00094DA17 /* RecentlyPlayedView.swift in Sources */,
 				8B46B95E283E7A940094DA17 /* TopPodcastsView.swift in Sources */,
 				8B46B952283DB5970094DA17 /* HomeView.swift in Sources */,
+				8B46B962283EEE980094DA17 /* MusicPlayerView.swift in Sources */,
 				8B46B924283B371D0094DA17 /* Spotify_CloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

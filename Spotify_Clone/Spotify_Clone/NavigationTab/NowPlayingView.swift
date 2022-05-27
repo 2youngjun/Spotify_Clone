@@ -46,7 +46,7 @@ struct NowPlayingView : View {
                 .padding(.trailing, 16)
             }
         }
-        .frame(height: 68)
+        .frame(height: 60)
         .background(Color.init(#colorLiteral(red: 0.137254902, green: 0.137254902, blue: 0.137254902, alpha: 1)))
     }
 }

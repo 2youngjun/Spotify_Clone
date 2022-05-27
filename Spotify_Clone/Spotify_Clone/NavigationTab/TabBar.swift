@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct TabBar: View {
-    @State private var isPlayer = false
+    @State private var isPlayer : Bool = false
     init() {
-            UITabBar.appearance().barTintColor = #colorLiteral(red: 0.06274509804, green: 0.06274509804, blue: 0.06274509804, alpha: 1)
-            UITabBar.appearance().tintColor = #colorLiteral(red: 0.9960784314, green: 0.9960784314, blue: 1, alpha: 1)
-        }
+        UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().tintColor = .white
+    }
+    
     var body: some View {
         TabView{
             NavigationView{
                 ZStack(alignment: .bottom){
-//                    HomeView()
+                    HomeView()
                     NowPlayingView()
                         .onTapGesture{
                             withAnimation{
@@ -53,7 +54,7 @@ struct TabBar: View {
         
         if isPlayer {
             ZStack(alignment: .topLeading){
-//                MusicPlayer()
+                MusicPlayerView()
                 Button(action: {
                     withAnimation{
                         isPlayer.toggle()
@@ -66,9 +67,8 @@ struct TabBar: View {
                 }
                 .padding(24)
             }
-            .transition(.move(edge: .top))
+            .transition(.move(edge: .bottom))
         }
-        
     }
 }
 
