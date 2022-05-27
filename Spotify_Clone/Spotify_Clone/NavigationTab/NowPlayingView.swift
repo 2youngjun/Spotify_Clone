@@ -17,15 +17,18 @@ struct NowPlayingView : View {
                 .aspectRatio(contentMode: .fit)
             
             VStack(alignment: .leading){
-                HStack{
-                    Text("Loving you girl • ")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                    Text("Peder Elias, Hkeem")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.white.opacity(0.7))
-                }
+//                HStack{
+////                    Text("Loving you girl • ")
+////                        .font(.footnote)
+////                        .fontWeight(.semibold)
+////                    Text("Peder Elias, Hkeem")
+////                        .font(.footnote)
+////                        .fontWeight(.semibold)
+////                        .foregroundColor(Color.white.opacity(0.7))
+//                }
+                Marque(text: "Loving you girl • Peder Elias, Hkeem", paddingTop: 18)
+                    .font(.footnote)
+                
                 HStack{
                     Image(systemName: "headphones")
                         .resizable()

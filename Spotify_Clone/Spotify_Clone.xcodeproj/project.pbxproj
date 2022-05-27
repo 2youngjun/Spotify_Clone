@@ -23,6 +23,7 @@
 		8B46B95C283E73C00094DA17 /* RecentlyPlayedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B95B283E73C00094DA17 /* RecentlyPlayedView.swift */; };
 		8B46B95E283E7A940094DA17 /* TopPodcastsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B95D283E7A940094DA17 /* TopPodcastsView.swift */; };
 		8B46B962283EEE980094DA17 /* MusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B961283EEE980094DA17 /* MusicPlayerView.swift */; };
+		8BF67E13284140AB006D9515 /* MusicTitleRotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF67E12284140AB006D9515 /* MusicTitleRotateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,7 @@
 		8B46B93E283B371E0094DA17 /* Spotify_CloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify_CloneUITests.swift; sourceTree = "<group>"; };
 		8B46B940283B371E0094DA17 /* Spotify_CloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify_CloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8B46B94D283B39CF0094DA17 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		8B46B94F283C91940094DA17 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; };
+		8B46B94F283C91940094DA17 /* NowPlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		8B46B951283DB5970094DA17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8B46B953283DB66E0094DA17 /* GenericContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericContent.swift; sourceTree = "<group>"; };
 		8B46B955283E689A0094DA17 /* HeroSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSectionView.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		8B46B95B283E73C00094DA17 /* RecentlyPlayedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyPlayedView.swift; sourceTree = "<group>"; };
 		8B46B95D283E7A940094DA17 /* TopPodcastsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPodcastsView.swift; sourceTree = "<group>"; };
 		8B46B961283EEE980094DA17 /* MusicPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerView.swift; sourceTree = "<group>"; };
+		8BF67E12284140AB006D9515 /* MusicTitleRotateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTitleRotateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				8B46B94D283B39CF0094DA17 /* TabBar.swift */,
 				8B46B94F283C91940094DA17 /* NowPlayingView.swift */,
 				8B46B961283EEE980094DA17 /* MusicPlayerView.swift */,
+				8BF67E12284140AB006D9515 /* MusicTitleRotateView.swift */,
 			);
 			path = NavigationTab;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				8B46B95E283E7A940094DA17 /* TopPodcastsView.swift in Sources */,
 				8B46B952283DB5970094DA17 /* HomeView.swift in Sources */,
 				8B46B962283EEE980094DA17 /* MusicPlayerView.swift in Sources */,
+				8BF67E13284140AB006D9515 /* MusicTitleRotateView.swift in Sources */,
 				8B46B924283B371D0094DA17 /* Spotify_CloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

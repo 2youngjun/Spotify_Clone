@@ -50,8 +50,7 @@ struct MusicPlayerView: View {
                 Image("LovingYouGirl")
                     .resizable()
                     .aspectRatio(1, contentMode: .fill)
-                    .padding(.top, 32)
-                    .padding(.bottom, 32)
+                    .padding([.top, .bottom], 32)
                 
                 HStack{
                     VStack(alignment: .leading, spacing: 8){
@@ -60,7 +59,7 @@ struct MusicPlayerView: View {
                             .fontWeight(.bold)
                         Text("Peder Elias, Hkeem")
                             .font(.body)
-                            .foregroundColor(Color.white.opacity(0.6))
+                            .foregroundColor(Color.white.opacity(0.7))
                     }
                     
                     Spacer()
