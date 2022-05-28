@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NowPlayingView : View {
     @State private var isPlay = false
-    
+
     var body: some View {
         HStack(spacing: 16){
             Image("LovingYouGirl")
@@ -79,8 +79,3 @@ struct NowPlayingView : View {
     }
 }
 
-struct NowPlayingView_Previews: PreviewProvider {
-    static var previews: some View {
-        NowPlayingView()
-    }
-}

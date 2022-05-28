@@ -14,6 +14,7 @@ enum RepeatMethod: Int{
 }
 
 struct MusicPlayerView: View {
+    @Binding var nowPlayingBack : Bool
     @State private var isHeart = false
     @State private var isShuffle = false
     @State private var isPlaying = false
@@ -22,19 +23,18 @@ struct MusicPlayerView: View {
     
     var body: some View {
         VStack{
-            Spacer()
+            Spacer(minLength: 20)
             VStack{
                 HStack{
-                    Button(action: {
-                        withAnimation{
-                            presentationMode.wrappedValue.dismiss()
+                    Image(systemName: "chevron.compact.down")
+                        .resizable()
+                        .frame(width: 16, height: 8)
+                        .foregroundColor(.white)
+                        .onTapGesture {
+                            withAnimation{
+                                self.nowPlayingBack.toggle()
+                            }
                         }
-                    }){
-                        Image(systemName: "chevron.compact.down")
-                            .resizable()
-                            .frame(width: 16, height: 8)
-                            .foregroundColor(.white)
-                    }
                     Spacer()
                     Text("Peder Elias 라디오")
                         .font(.footnote)
@@ -192,8 +192,3 @@ struct MusicPlayerView: View {
     }
 }
 
-struct MusicPlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        MusicPlayerView()
-    }
-}

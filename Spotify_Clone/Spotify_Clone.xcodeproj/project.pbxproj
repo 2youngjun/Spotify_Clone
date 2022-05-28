@@ -174,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				8B46B94D283B39CF0094DA17 /* TabBar.swift */,
-				8B46B94F283C91940094DA17 /* NowPlayingView.swift */,
 				8B46B961283EEE980094DA17 /* MusicPlayerView.swift */,
+				8B46B94F283C91940094DA17 /* NowPlayingView.swift */,
 				8BF67E12284140AB006D9515 /* MusicTitleRotateView.swift */,
 			);
 			path = NavigationTab;

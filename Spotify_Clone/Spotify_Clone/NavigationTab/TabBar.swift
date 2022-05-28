@@ -54,7 +54,7 @@ struct TabBar: View {
         
         if isPlayer {
             ZStack{
-                MusicPlayerView()
+                MusicPlayerView(nowPlayingBack: $isPlayer)
             }
             .transition(.move(edge: .bottom))
         }
