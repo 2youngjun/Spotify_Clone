@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NowPlayingView : View {
     @State private var isPlay = false
+    @EnvironmentObject var checkToggle: CheckToggle
 
     var body: some View {
         HStack(spacing: 16){
@@ -54,9 +55,10 @@ struct NowPlayingView : View {
                 }
                 
                 Button(action: {
-                    isPlay.toggle()
+//                    isPlay.toggle()
+                    checkToggle.isPlayingToggle.toggle()
                 }){
-                    if isPlay{
+                    if checkToggle.isPlayingToggle{
                         Image(systemName: "play.fill")
                             .resizable()
                             .frame(width: 20, height: 20)

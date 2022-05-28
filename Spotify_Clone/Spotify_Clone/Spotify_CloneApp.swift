@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Spotify_CloneApp: App {
+    @StateObject private var checkToggle = CheckToggle()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(checkToggle)
         }
     }
 }

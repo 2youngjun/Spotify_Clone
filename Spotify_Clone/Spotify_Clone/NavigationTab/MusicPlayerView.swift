@@ -15,11 +15,11 @@ enum RepeatMethod: Int{
 
 struct MusicPlayerView: View {
     @Binding var nowPlayingBack : Bool
+    @State private var isPlaying = false
     @State private var isHeart = false
     @State private var isShuffle = false
-    @State private var isPlaying = false
     @State private var isRepeatMethod : RepeatMethod = .playingDirect
-    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var checkToggle: CheckToggle
     
     var body: some View {
         VStack{
@@ -133,9 +133,10 @@ struct MusicPlayerView: View {
                     Spacer()
                     
                     Button(action:{
-                        isPlaying.toggle()
+//                        isPlaying.toggle()
+                        checkToggle.isPlayingToggle.toggle()
                     }) {
-                        if isPlaying {
+                        if checkToggle.isPlayingToggle {
                             Image(systemName: "play.circle")
                                 .resizable()
                                 .frame(width:70,height:70)
