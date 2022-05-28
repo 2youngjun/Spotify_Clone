@@ -19,25 +19,27 @@ struct NowPlayingView : View {
                 .aspectRatio(contentMode: .fit)
             
             VStack(alignment: .leading){
-                Marque(text: "Loving you girl • Peder Elias, Hkeem", paddingTop: 11)
+                Marque(text: "Loving you girl • Peder Elias, Hkeem", paddingTop: 12)
                 
                 HStack{
                     if isBluetooth{
                         Image(systemName: "headphones")
                             .resizable()
-                            .frame(width: 8, height: 8)
+                            .frame(width: 10, height: 10)
                             .foregroundColor(.white)
                         Text("이영준의 AIRPODS PRO")
                             .font(.caption2)
                             .foregroundColor(.white)
+                            .bold()
                     } else {
                         Image(systemName: "headphones")
                             .resizable()
-                            .frame(width: 8, height: 8)
+                            .frame(width: 10, height: 10)
                             .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
                         Text("이영준의 AIRPODS PRO")
                             .font(.caption2)
                             .foregroundColor(Color.init(#colorLiteral(red: 0.1725490196, green: 0.8156862745, blue: 0.4196078431, alpha: 1)))
+                            .bold()
                     }
                     
                 }
