@@ -36,7 +36,7 @@ struct MusicPlayerView: View {
                             }
                         }
                     Spacer()
-                    Text("Peder Elias 라디오")
+                    Text("Peder Elias Radio")
                         .font(.footnote)
                         .fontWeight(.semibold)
                     Spacer()
@@ -168,7 +168,6 @@ struct MusicPlayerView: View {
                         }
                     }) {
                         self.rotateView()
-                        
                     }
                 }.padding(.top, 32)
                 

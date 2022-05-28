@@ -16,7 +16,7 @@ struct HeroSectionView: View {
         VStack(spacing: 0){
             // SectionTitle View 를 따로 생성
             // HomeView 에 자주 쓰이기 때문
-            SectionTitle(title: "Good Evening")
+            SectionTitle(title: "Trending now")
             
             LazyVGrid(columns: columns, spacing: 8){
                 ForEach(GenericContent.heroData){ hero in

@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TabBar: View {
     @State private var isPlayer : Bool = false
-    init() {
-        UITabBar.appearance().barTintColor = .black
-        UITabBar.appearance().tintColor = .white
+    init(){
+        UITabBar.appearance().backgroundColor = UIColor.black
+        UITabBar.appearance().tintColor = #colorLiteral(red: 0.9960784314, green: 0.9960784314, blue: 1, alpha: 1)
     }
     
     var body: some View {
@@ -25,11 +25,14 @@ struct TabBar: View {
                                 isPlayer.toggle()
                             }
                         }
+                        .fullScreenCover(isPresented: $isPlayer){
+                            MusicPlayerView(nowPlayingBack: $isPlayer)
+                        }
                 }
                 .navigationBarHidden(true)
             }
             .tabItem{
-                Image("home-fill")
+                Image(systemName: "house.fill")
                 Text("Home")
             }
             
@@ -37,7 +40,7 @@ struct TabBar: View {
                 Text("Search")
             }
             .tabItem{
-                Image("search")
+                Image(systemName: "magnifyingglass")
                 Text("Search")
             }
             
@@ -45,37 +48,16 @@ struct TabBar: View {
                 Text("Your Library")
             }
             .tabItem{
-                Image("library")
+                Image(systemName: "books.vertical")
                 Text("Your Library")
             }
-            
         }
-        .accentColor(.black)
-        
-        if isPlayer {
-            ZStack{
-                MusicPlayerView(nowPlayingBack: $isPlayer)
-            }
-            .transition(.move(edge: .bottom))
-        }
+        .accentColor(.white)
     }
 }
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
-    }
-}
-
-struct NavigationConfigurator: UIViewControllerRepresentable {
-    var configure: (UINavigationController) -> Void = { _ in }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
-        UIViewController()
-    }
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            self.configure(nc)
-        }
     }
 }

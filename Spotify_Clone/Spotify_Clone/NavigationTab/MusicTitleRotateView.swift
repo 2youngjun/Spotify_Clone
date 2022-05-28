@@ -23,13 +23,14 @@ struct Marque: View {
         GeometryReader { proxy in
             ScrollView(.horizontal, showsIndicators: false, content: {
                 Text(text)
+                    .bold()
+                    .font(.footnote)
                     .lineLimit(1)
                     .background(MusicTitleRotateView(rect: $textFrame)).offset(moveView ? CGSize(width: -1 * textFrame.width, height: 0) : CGSize(width: proxy.size.width, height: 0))
                     .onAppear() {
                         self.stopAnimation = false
                         animateView()
                         moveViewOnAnimationEnd()
-                        //scrollViewProxy.scrollTo("Identifier") /// does not animate
                     }
                     .onDisappear() {
                         self.stopAnimation = true
@@ -40,16 +41,16 @@ struct Marque: View {
         }
     }
     private func animateView() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2, execute: { //after 0.5 sec
-            withAnimation(Animation.linear(duration: Double(textFrame.width) * 0.01)) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0, execute: {
+            withAnimation(Animation.linear(duration: Double(textFrame.width) * 0.03)) {
                 moveView = true
             }
             //no on completion so need to add another time bound method to restart animation from start
         })
     }
     private func moveViewOnAnimationEnd() {
-        let timeToAnimate = (Double(textFrame.width) * 0.01) + 0.6
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + timeToAnimate, execute: { //after 0.5 sec
+        let timeToAnimate = (Double(textFrame.width) * 0.01) + 7.0
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + timeToAnimate, execute: {
             moveView = false
             if stopAnimation == false {
                 animateView()

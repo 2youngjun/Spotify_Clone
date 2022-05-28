@@ -19,8 +19,7 @@ struct GenericContent: Identifiable {
         GenericContent(title: "Afro Mix", imageName: "afro"),
         GenericContent(title: "Section 80", imageName: "section-80"),
         GenericContent(title: "So far Gone", imageName: "sofar"),
-        GenericContent(title: "'00 R&B", imageName: "rnb-2"),
-
+        GenericContent(title: "00 R&B", imageName: "rnb-2"),
     ]
     
     static let recentlyPlayedData: [GenericContent] = [
@@ -32,7 +31,6 @@ struct GenericContent: Identifiable {
         GenericContent(title: "Fresh Finds", imageName: "fresh-finds-4"),
         GenericContent(title: "Ignorance is Bliss", imageName: "ov"),
         GenericContent(title: "Reggae Classics", imageName: "Raggae"),
-
     ]
     
     static let podcastsData: [GenericContent] = [

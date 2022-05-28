@@ -25,10 +25,11 @@ struct TopPodcastsView: View {
                                 Text(cast.title)
                                     .foregroundColor(.white)
                                     .fontWeight(.semibold)
-                                
                                 Text(subTitle)
                                     .foregroundColor(.gray)
                                     .font(.subheadline)
+                                    .lineLimit(1)
+                                    .multilineTextAlignment(.leading)
                             } else {
                                 Text(cast.title)
                                     .foregroundColor(.gray)

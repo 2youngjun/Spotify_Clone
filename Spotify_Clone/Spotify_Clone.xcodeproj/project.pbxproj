@@ -24,6 +24,7 @@
 		8B46B95E283E7A940094DA17 /* TopPodcastsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B95D283E7A940094DA17 /* TopPodcastsView.swift */; };
 		8B46B962283EEE980094DA17 /* MusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46B961283EEE980094DA17 /* MusicPlayerView.swift */; };
 		8BC7C8072841CDA400CE9278 /* CheckToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7C8062841CDA400CE9278 /* CheckToggle.swift */; };
+		8BC7C80928421C3400CE9278 /* GoodAfternoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7C80828421C3400CE9278 /* GoodAfternoonView.swift */; };
 		8BF67E13284140AB006D9515 /* MusicTitleRotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF67E12284140AB006D9515 /* MusicTitleRotateView.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		8B46B95D283E7A940094DA17 /* TopPodcastsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPodcastsView.swift; sourceTree = "<group>"; };
 		8B46B961283EEE980094DA17 /* MusicPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerView.swift; sourceTree = "<group>"; };
 		8BC7C8062841CDA400CE9278 /* CheckToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckToggle.swift; sourceTree = "<group>"; };
+		8BC7C80828421C3400CE9278 /* GoodAfternoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodAfternoonView.swift; sourceTree = "<group>"; };
 		8BF67E12284140AB006D9515 /* MusicTitleRotateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTitleRotateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				8B46B951283DB5970094DA17 /* HomeView.swift */,
+				8BC7C80828421C3400CE9278 /* GoodAfternoonView.swift */,
 				8B46B955283E689A0094DA17 /* HeroSectionView.swift */,
 				8B46B95B283E73C00094DA17 /* RecentlyPlayedView.swift */,
 				8B46B95D283E7A940094DA17 /* TopPodcastsView.swift */,
@@ -324,6 +327,7 @@
 			files = (
 				8B46B956283E689A0094DA17 /* HeroSectionView.swift in Sources */,
 				8B46B94E283B39CF0094DA17 /* TabBar.swift in Sources */,
+				8BC7C80928421C3400CE9278 /* GoodAfternoonView.swift in Sources */,
 				8B46B926283B371D0094DA17 /* ContentView.swift in Sources */,
 				8B46B950283C91940094DA17 /* NowPlayingView.swift in Sources */,
 				8B46B959283E6F960094DA17 /* SectionTitle.swift in Sources */,
