@@ -1,4 +1,4 @@
-## Spotify Clone
+# Spotify Clone Coding
 
 Spotify Application Clone Coding
 
