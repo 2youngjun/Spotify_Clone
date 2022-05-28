@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeView()
-        // return TabBar()
+        return TabBar()
     }
 }
 
